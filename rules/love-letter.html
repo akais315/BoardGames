@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Love Letter — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Love Letter</h1>
+</header>
+<main>
+
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">2 – 6</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">20 min</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Facile</span></div>
+  </div>
+
+  <div class="type-badges">
+    <span class="type-badge competitive">⚔️ Compétitif</span>
+    <span class="type-badge party">🎉 Party</span>
+  </div>
+
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">
+    Être le dernier joueur encore en jeu dans une manche, ou avoir la carte la plus haute en fin de manche. Accumuler <span class="hl-green">4 jetons faveur</span> pour remporter la partie.
+  </div>
+
+  <div class="section-title">Mise en place</div>
+  <ul class="rules">
+    <li>Mélanger le deck de 16 cartes. Retirer <span class="hl-grey">1 carte face cachée</span> (inconnue pour tous)</li>
+    <li>Distribuer <span class="hl-green">1 carte</span> à chaque joueur</li>
+    <li>Placer le reste en pioche centrale</li>
+  </ul>
+
+  <div class="section-title">Tour de jeu</div>
+  <ul class="rules">
+    <li>Piocher <span class="hl-green">1 carte</span> — vous avez maintenant 2 cartes en main</li>
+    <li>Jouer <span class="hl-green">1 carte</span> face visible et appliquer son effet</li>
+    <li>Si vous n'avez plus de cartes en main, vous êtes éliminé de la manche</li>
+  </ul>
+
+  <div class="section-title">Les cartes (valeur / effet)</div>
+  <ul class="rules">
+    <li><span class="hl-grey">Garde (1) ×6</span> — Devinez la carte d'un joueur. Si correct, il est éliminé. Ne peut pas deviner "Garde"</li>
+    <li><span class="hl-grey">Prêtre (2) ×2</span> — Regardez secrètement la main d'un joueur</li>
+    <li><span class="hl-grey">Baron (3) ×2</span> — Comparez votre main avec celle d'un joueur. Le plus faible est éliminé</li>
+    <li><span class="hl-grey">Servante (4) ×2</span> — Vous êtes immunisé contre les effets des autres jusqu'à votre prochain tour</li>
+    <li><span class="hl-grey">Prince (5) ×2</span> — Forcez un joueur (vous inclus) à défausser sa carte et à en piocher une autre</li>
+    <li><span class="hl-grey">Chancelier (6) ×1</span> — Piochez 2 cartes, gardez-en 1, replacez les autres sous la pioche</li>
+    <li><span class="hl-grey">Roi (7) ×1</span> — Échangez votre main avec celle d'un joueur</li>
+    <li><span class="hl-grey">Comtesse (8) ×1</span> — Si vous avez le Roi ou un Prince en main, vous <strong>devez</strong> jouer la Comtesse</li>
+    <li><span class="hl-grey">Princesse (9) ×1</span> — Si vous jouez ou défaussez cette carte, vous êtes éliminé</li>
+  </ul>
+
+  <div class="section-title">Fin de manche</div>
+  <ul class="rules">
+    <li>La manche se termine quand la pioche est vide, ou qu'il ne reste qu'un seul joueur en jeu</li>
+    <li>Le joueur avec la carte la plus haute remporte la manche et gagne <span class="hl-green">1 jeton faveur</span></li>
+    <li>En cas d'égalité, le joueur avec la plus grande valeur totale de défausse gagne</li>
+  </ul>
+
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Astuces</div>
+      <ul class="rules">
+        <li>La Servante est très puissante — jouez-la quand vous avez une carte forte à protéger</li>
+        <li>Mémorisez les cartes déjà jouées pour affiner vos devinettes avec le Garde</li>
+        <li>La Comtesse peut se jouer volontairement comme bluff même sans Roi/Prince</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

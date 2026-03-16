@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Carcassonne — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Carcassonne</h1>
+</header>
+<main>
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">2 – 5</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">35–60 min</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Facile</span></div>
+  </div>
+  <div class="type-badges">
+    <span class="type-badge competitive">⚔️ Compétitif</span>
+    <span class="type-badge family">👨‍👩‍👧 Famille</span>
+    <span class="type-badge strategy">🧠 Stratégie</span>
+  </div>
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">Avoir le plus de <span class="hl-green">points</span> à la fin de la partie. Les points viennent des villes, routes, monastères et champs construits.</div>
+  <div class="section-title">Tour de jeu</div>
+  <ul class="rules">
+    <li><strong>1.</strong> Piochez et placez une <span class="hl-green">tuile terrain</span> (doit être adjacente à une tuile existante, les bords compatibles)</li>
+    <li><strong>2.</strong> Optionnellement, placez un <span class="hl-grey">meeple</span> sur un élément de la tuile que vous venez de poser (ville, route, monastère, champ) — <strong>s'il n'y a pas déjà de meeple dans cet élément</strong></li>
+    <li><strong>3.</strong> Si un élément est <span class="hl-green">complété</span>, marquez les points et récupérez vos meeples</li>
+  </ul>
+  <div class="section-title">Scoring en cours de partie</div>
+  <ul class="rules">
+    <li><span class="hl-grey">Ville complète</span> : 2 pts par tuile + 2 pts par blason</li>
+    <li><span class="hl-grey">Route complète</span> : 1 pt par tuile</li>
+    <li><span class="hl-grey">Monastère complet</span> : 9 pts (la tuile + 8 adjacentes)</li>
+  </ul>
+  <div class="section-title">Scoring de fin de partie</div>
+  <ul class="rules">
+    <li><span class="hl-grey">Ville incomplète</span> : 1 pt par tuile + 1 pt par blason</li>
+    <li><span class="hl-grey">Route incomplète</span> : 1 pt par tuile</li>
+    <li><span class="hl-grey">Monastère incomplet</span> : 1 pt par tuile adjacente (monastère inclus)</li>
+    <li><span class="hl-grey">Champs</span> : 3 pts par ville <em>complète</em> adjacente au champ (fermier)</li>
+  </ul>
+  <div class="section-title">Partage d'éléments</div>
+  <ul class="rules">
+    <li>Si deux joueurs ont des meeples dans le même élément, ils <span class="hl-green">partagent les points</span> à égalité</li>
+    <li>Le joueur avec le plus de meeples reçoit tous les points en cas de majorité</li>
+  </ul>
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Astuces</div>
+      <ul class="rules">
+        <li>Les fermiers (champs) ne reviennent jamais en main — placez-les avec parcimonie sur des villes prometteuses</li>
+        <li>Rejoindre une ville adverse peut être rentable si vous avez plus de meeples dedans</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>

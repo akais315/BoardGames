@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Échecs — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Échecs</h1>
+</header>
+<main>
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">2 uniquement</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">Variable</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Expert</span></div>
+  </div>
+  <div class="type-badges">
+    <span class="type-badge competitive">⚔️ Compétitif</span>
+    <span class="type-badge strategy">🧠 Abstrait</span>
+  </div>
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">Mettre le <span class="hl-red">Roi adverse en échec et mat</span> — une position d'où il ne peut s'échapper.</div>
+  <div class="section-title">Mise en place</div>
+  <ul class="rules">
+    <li>Plateau 8×8. Les Blancs jouent en premier</li>
+    <li>Rangée 1 (Blancs) : Tour, Cavalier, Fou, Dame, Roi, Fou, Cavalier, Tour</li>
+    <li>Rangée 2 : 8 Pions blancs — Rangée 7 : 8 Pions noirs — Rangée 8 : pièces noires miroir</li>
+  </ul>
+  <div class="section-title">Déplacements des pièces</div>
+  <ul class="rules">
+    <li><span class="hl-grey">♙ Pion</span> — Avance d'1 case (ou 2 au 1er coup). Capture en diagonale. Promotion en 8e rangée</li>
+    <li><span class="hl-grey">♖ Tour</span> — Se déplace en ligne droite (horizontal ou vertical), autant de cases voulues</li>
+    <li><span class="hl-grey">♗ Fou</span> — Se déplace en diagonale, autant de cases. Reste toujours sur la même couleur</li>
+    <li><span class="hl-grey">♕ Dame</span> — Combine Tour + Fou : ligne droite ou diagonale, toutes distances</li>
+    <li><span class="hl-grey">♘ Cavalier</span> — Se déplace en "L" (2+1 ou 1+2). <strong>Seule pièce qui saute</strong> par-dessus les autres</li>
+    <li><span class="hl-grey">♔ Roi</span> — 1 case dans n'importe quelle direction. Ne peut pas aller sur une case attaquée</li>
+  </ul>
+  <div class="section-title">Règles spéciales</div>
+  <ul class="rules">
+    <li><span class="hl-grey">Roque</span> — Le Roi (n'ayant pas encore bougé) se déplace de 2 cases vers une Tour (n'ayant pas bougé), et la Tour saute de l'autre côté. Impossible si le Roi est en échec ou traverse une case attaquée</li>
+    <li><span class="hl-grey">Prise en passant</span> — Si un pion adverse avance de 2 cases et arrive à côté de votre pion, vous pouvez le capturer comme s'il n'avait avancé que d'1 case — seulement le tour suivant</li>
+    <li><span class="hl-grey">Promotion</span> — Un pion atteignant la dernière rangée devient Dame, Tour, Fou ou Cavalier (presque toujours Dame)</li>
+  </ul>
+  <div class="section-title">Échec et match nul</div>
+  <ul class="rules">
+    <li><span class="hl-red">Échec</span> — Le Roi est attaqué. Le joueur <strong>doit</strong> le sortir d'échec (bloquer, capturer, ou déplacer le Roi)</li>
+    <li><span class="hl-red">Échec et mat</span> — Le Roi est en échec et ne peut pas s'en sortir → fin de partie</li>
+    <li><span class="hl-grey">Pat</span> — Le joueur à qui c'est le tour n'a aucun coup légal mais n'est pas en échec → match nul</li>
+  </ul>
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Principes de base pour débuter</div>
+      <ul class="rules">
+        <li>Contrôlez le centre dès l'ouverture (cases e4, e5, d4, d5)</li>
+        <li>Développez vos pièces (sortez Cavaliers et Fous) avant d'attaquer</li>
+        <li>Roquez tôt pour protéger votre Roi</li>
+        <li>La Dame est précieuse — ne l'exposez pas inutilement en début de partie</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>

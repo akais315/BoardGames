@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Azul — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Azul</h1>
+</header>
+<main>
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">2 – 4</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">30–45 min</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Facile</span></div>
+  </div>
+  <div class="type-badges">
+    <span class="type-badge competitive">⚔️ Compétitif</span>
+    <span class="type-badge family">👨‍👩‍👧 Famille</span>
+  </div>
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">Avoir le plus de <span class="hl-green">points de victoire</span> quand un joueur complète une rangée horizontale sur son mur.</div>
+  <div class="section-title">Structure de la partie</div>
+  <ul class="rules">
+    <li>Chaque manche se compose de 3 phases : <span class="hl-grey">Sélection de tuiles</span>, <span class="hl-grey">Pose sur le mur</span>, <span class="hl-grey">Préparation du tour suivant</span></li>
+    <li>Les tuiles sont disposées dans des <span class="hl-green">présentoirs</span> (4 tuiles chacun) et dans le centre de table</li>
+  </ul>
+  <div class="section-title">Phase 1 — Sélection</div>
+  <ul class="rules">
+    <li>À votre tour : prenez <span class="hl-green">toutes les tuiles</span> d'une même couleur d'un présentoir, le reste va au centre</li>
+    <li>Ou prenez toutes les tuiles d'une couleur du centre</li>
+    <li>Le premier à prendre du centre prend aussi le <span class="hl-red">jeton 1er joueur</span> et perd 1 point</li>
+    <li>Placez les tuiles sur une <span class="hl-grey">ligne de préparation</span> (rangées 1 à 5)</li>
+  </ul>
+  <div class="section-title">Phase 2 — Pose sur le mur</div>
+  <ul class="rules">
+    <li>Si une ligne de préparation est complète, déplacez <span class="hl-green">1 tuile</span> sur le mur (position imposée) et défaussez le reste</li>
+    <li>Scoring : +1 pt si tuile isolée. Si adjacente : comptez la ligne horizontale <strong>et</strong> verticale complètes</li>
+    <li>Tuiles en excès (lignes non complètes) passent à la <span class="hl-red">ligne de pénalité</span> : -1, -1, -2, -2, -2, -3, -3</li>
+  </ul>
+  <div class="section-title">Bonus de fin de partie</div>
+  <ul class="rules">
+    <li>+2 pts par rangée horizontale complète</li>
+    <li>+7 pts par colonne verticale complète</li>
+    <li>+10 pts par couleur complète (5 tuiles de même couleur posées)</li>
+  </ul>
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Astuces</div>
+      <ul class="rules">
+        <li>Évitez les pénalités — ne prenez jamais plus de tuiles que vos lignes ne peuvent en accueillir</li>
+        <li>Bloquer l'adversaire en prenant des couleurs dont il a besoin peut valoir un léger malus pour vous</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>

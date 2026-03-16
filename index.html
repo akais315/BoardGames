@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <meta charset="UTF-8">
-<title>🎲 Ludothèque</title>
+<title>Ludothèque</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/index.css">
 <body>
-
 <header>
   <div class="header-top">
     <div class="site-title">LUDO<span>.</span>THÈQUE</div>
@@ -16,7 +15,6 @@
     </div>
   </div>
 </header>
-
 <div class="filters">
   <div class="search-wrap">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -24,12 +22,14 @@
   </div>
   <div class="filter-row">
     <span class="filter-label" data-fr="Type" data-en="Type">Type</span>
-    <button class="filter-btn active" data-filter="all"    onclick="setFilter(this,'type')" data-fr="Tous"        data-en="All">Tous</button>
-    <button class="filter-btn"        data-filter="coop"   onclick="setFilter(this,'type')" data-fr="Coopératif" data-en="Cooperative">Coopératif</button>
-    <button class="filter-btn"        data-filter="compet" onclick="setFilter(this,'type')" data-fr="Compétitif" data-en="Competitive">Compétitif</button>
-    <button class="filter-btn"        data-filter="team"   onclick="setFilter(this,'type')" data-fr="Équipes"    data-en="Teams">Équipes</button>
-    <button class="filter-btn"        data-filter="family" onclick="setFilter(this,'type')" data-fr="Famille"    data-en="Family">Famille</button>
-    <button class="filter-btn"        data-filter="party"  onclick="setFilter(this,'type')" data-fr="Party"      data-en="Party">Party</button>
+    <button class="filter-btn active" data-filter="all"      onclick="setFilter(this,'type')" data-fr="Tous"       data-en="All">Tous</button>
+    <button class="filter-btn"        data-filter="coop"     onclick="setFilter(this,'type')" data-fr="Coopératif" data-en="Cooperative">Coopératif</button>
+    <button class="filter-btn"        data-filter="compet"   onclick="setFilter(this,'type')" data-fr="Compétitif" data-en="Competitive">Compétitif</button>
+    <button class="filter-btn"        data-filter="team"     onclick="setFilter(this,'type')" data-fr="Équipes"    data-en="Teams">Équipes</button>
+    <button class="filter-btn"        data-filter="family"   onclick="setFilter(this,'type')" data-fr="Famille"    data-en="Family">Famille</button>
+    <button class="filter-btn"        data-filter="party"    onclick="setFilter(this,'type')" data-fr="Party"      data-en="Party">Party</button>
+    <button class="filter-btn"        data-filter="strategy" onclick="setFilter(this,'type')" data-fr="Stratégie"  data-en="Strategy">Stratégie</button>
+    <button class="filter-btn"        data-filter="deduct"   onclick="setFilter(this,'type')" data-fr="Déduction"  data-en="Deduction">Déduction</button>
   </div>
   <div class="filter-row">
     <span class="filter-label" data-fr="Joueurs" data-en="Players">Joueurs</span>
@@ -46,246 +46,107 @@
     <button class="filter-btn"        data-filter="3"   onclick="setFilter(this,'diff')" data-fr="Expert" data-en="Expert">Expert</button>
   </div>
 </div>
-
 <div class="stats-bar">
-  <span class="game-count"><strong id="count">1</strong> <span id="count-label" data-fr="jeu affiché" data-en="game shown">jeu affiché</span></span>
+  <span class="game-count"><strong id="count">38</strong> <span id="count-label" data-fr="jeux affichés" data-en="games shown">jeux affichés</span></span>
 </div>
-
 <div class="grid" id="grid">
-
-  <!-- ══════════════════════════════════════════════════
-       HOW TO ADD A GAME
-       ─────────────────────────────────────────────────
-       1. Copy a <a class="card"> block below
-       2. Fill in data attributes:
-          data-name     — game name (used for search)
-          data-tags     — space-separated: coop compet team family strategy party words deduct
-          data-diff     — 1 (easy) | 2 (medium) | 3 (expert)
-          data-players  — player range string e.g. "2-5" or "4-99"
-          data-rules    — "true" if rules page exists, omit otherwise
-          href          — path to rules page, or "#" if not yet written
-       3. Replace emoji placeholder with a cover image:
-          <img class="card-cover" src="covers/mygame.jpg" alt="My Game">
-       ══════════════════════════════════════════════════ -->
-
-  <a class="card" href="rules/codenames.html"
-     data-name="Codenames"
-     data-tags="compet team words"
-     data-diff="2"
-     data-players="4-99"
-     data-rules="true">
-    <div class="card-cover-wrap">
-      <div class="card-cover-placeholder">🕵️</div>
-    </div>
-    <div class="card-body">
-      <div class="card-name">Codenames</div>
-      <div class="card-meta">
-        <span class="meta-pill">👥 4–99</span>
-        <span class="meta-pill">⏱ 20 min</span>
-      </div>
-      <div class="diff">
-        <div class="diff-dot on"></div>
-        <div class="diff-dot on"></div>
-        <div class="diff-dot"></div>
-      </div>
-      <div class="card-tags">
-        <span class="ctag ctag-compet">Compétitif</span>
-        <span class="ctag ctag-team">Équipes</span>
-        <span class="ctag ctag-words">Mots</span>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" href="#"
-     data-name="Catan"
-     data-tags="strategy compet"
-     data-diff="2"
-     data-players="3-4">
-    <div class="card-cover-wrap">
-      <div class="card-cover-placeholder">🏝️</div>
-      <div class="no-rules-overlay" data-fr="Règles bientôt" data-en="Rules soon">Règles bientôt</div>
-    </div>
-    <div class="card-body">
-      <div class="card-name">Catan</div>
-      <div class="card-meta">
-        <span class="meta-pill">👥 3–4</span>
-        <span class="meta-pill">⏱ 90 min</span>
-      </div>
-      <div class="diff">
-        <div class="diff-dot on"></div>
-        <div class="diff-dot on"></div>
-        <div class="diff-dot"></div>
-      </div>
-      <div class="card-tags">
-        <span class="ctag ctag-strategy">Stratégie</span>
-        <span class="ctag ctag-compet">Compétitif</span>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" href="#"
-     data-name="Pandemic"
-     data-tags="coop"
-     data-diff="2"
-     data-players="2-4">
-    <div class="card-cover-wrap">
-      <div class="card-cover-placeholder">🦠</div>
-      <div class="no-rules-overlay" data-fr="Règles bientôt" data-en="Rules soon">Règles bientôt</div>
-    </div>
-    <div class="card-body">
-      <div class="card-name">Pandemic</div>
-      <div class="card-meta">
-        <span class="meta-pill">👥 2–4</span>
-        <span class="meta-pill">⏱ 60 min</span>
-      </div>
-      <div class="diff">
-        <div class="diff-dot on"></div>
-        <div class="diff-dot on"></div>
-        <div class="diff-dot"></div>
-      </div>
-      <div class="card-tags">
-        <span class="ctag ctag-coop">Coopératif</span>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" href="#"
-     data-name="Ticket to Ride"
-     data-tags="strategy compet family"
-     data-diff="1"
-     data-players="2-5">
-    <div class="card-cover-wrap">
-      <div class="card-cover-placeholder">🚂</div>
-      <div class="no-rules-overlay" data-fr="Règles bientôt" data-en="Rules soon">Règles bientôt</div>
-    </div>
-    <div class="card-body">
-      <div class="card-name">Ticket to Ride</div>
-      <div class="card-meta">
-        <span class="meta-pill">👥 2–5</span>
-        <span class="meta-pill">⏱ 60 min</span>
-      </div>
-      <div class="diff">
-        <div class="diff-dot on"></div>
-        <div class="diff-dot"></div>
-        <div class="diff-dot"></div>
-      </div>
-      <div class="card-tags">
-        <span class="ctag ctag-strategy">Stratégie</span>
-        <span class="ctag ctag-family">Famille</span>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" href="#"
-     data-name="Dixit"
-     data-tags="party family"
-     data-diff="1"
-     data-players="3-6">
-    <div class="card-cover-wrap">
-      <div class="card-cover-placeholder">🎨</div>
-      <div class="no-rules-overlay" data-fr="Règles bientôt" data-en="Rules soon">Règles bientôt</div>
-    </div>
-    <div class="card-body">
-      <div class="card-name">Dixit</div>
-      <div class="card-meta">
-        <span class="meta-pill">👥 3–6</span>
-        <span class="meta-pill">⏱ 30 min</span>
-      </div>
-      <div class="diff">
-        <div class="diff-dot on"></div>
-        <div class="diff-dot"></div>
-        <div class="diff-dot"></div>
-      </div>
-      <div class="card-tags">
-        <span class="ctag ctag-party">Party</span>
-        <span class="ctag ctag-family">Famille</span>
-      </div>
-    </div>
-  </a>
-
+  <!-- PARTY -->
+  <a class="card" href="rules/love-letter.html" data-name="Love Letter" data-tags="compet party" data-diff="1" data-players="2-6" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">💌</div></div><div class="card-body"><div class="card-name">Love Letter</div><div class="card-meta"><span class="meta-pill">👥 2–6</span><span class="meta-pill">⏱ 20 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-party">Party</span></div></div></a>
+  <a class="card" href="rules/the-mind.html" data-name="The Mind" data-tags="coop party" data-diff="1" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🧘</div></div><div class="card-body"><div class="card-name">The Mind</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 20 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-party">Party</span></div></div></a>
+  <a class="card" href="rules/codenames.html" data-name="Codenames" data-tags="compet team words" data-diff="2" data-players="4-99" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🕵️</div></div><div class="card-body"><div class="card-name">Codenames</div><div class="card-meta"><span class="meta-pill">👥 4–99</span><span class="meta-pill">⏱ 20 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-team">Équipes</span><span class="ctag ctag-words">Mots</span></div></div></a>
+  <a class="card" href="rules/stella.html" data-name="Stella" data-tags="party family" data-diff="1" data-players="3-6" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">⭐</div></div><div class="card-body"><div class="card-name">Stella</div><div class="card-meta"><span class="meta-pill">👥 3–6</span><span class="meta-pill">⏱ 30 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-party">Party</span><span class="ctag ctag-family">Famille</span></div></div></a>
+  <a class="card" href="rules/dany.html" data-name="Dany" data-tags="party team" data-diff="1" data-players="4-8" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">✏️</div></div><div class="card-body"><div class="card-name">Dany</div><div class="card-meta"><span class="meta-pill">👥 4–8</span><span class="meta-pill">⏱ 25 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-party">Party</span><span class="ctag ctag-team">Équipes</span></div></div></a>
+  <a class="card" href="rules/oriflamme.html" data-name="Oriflamme" data-tags="compet party" data-diff="1" data-players="3-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏰</div></div><div class="card-body"><div class="card-name">Oriflamme</div><div class="card-meta"><span class="meta-pill">👥 3–5</span><span class="meta-pill">⏱ 25 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-party">Party</span></div></div></a>
+  <a class="card" href="rules/boursicocotte.html" data-name="Boursicocotte" data-tags="compet party family" data-diff="1" data-players="3-6" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🐔</div></div><div class="card-body"><div class="card-name">Boursicocotte</div><div class="card-meta"><span class="meta-pill">👥 3–6</span><span class="meta-pill">⏱ 35 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-party">Party</span><span class="ctag ctag-family">Famille</span></div></div></a>
+  <a class="card" href="rules/back-stories.html" data-name="Back Stories" data-tags="coop deduct" data-diff="1" data-players="1-6" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🔍</div></div><div class="card-body"><div class="card-name">Back Stories</div><div class="card-meta"><span class="meta-pill">👥 1–6</span><span class="meta-pill">⏱ 30 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-deduct">Déduction</span></div></div></a>
+  <!-- FAMILLE -->
+  <a class="card" href="rules/azul.html" data-name="Azul" data-tags="compet family" data-diff="1" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🔷</div></div><div class="card-body"><div class="card-name">Azul</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 45 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-family">Famille</span></div></div></a>
+  <a class="card" href="rules/takenoko.html" data-name="Takenoko" data-tags="compet family" data-diff="1" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🎋</div></div><div class="card-body"><div class="card-name">Takenoko</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 45 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-family">Famille</span></div></div></a>
+  <a class="card" href="rules/carcassonne.html" data-name="Carcassonne" data-tags="compet family strategy" data-diff="1" data-players="2-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏯</div></div><div class="card-body"><div class="card-name">Carcassonne</div><div class="card-meta"><span class="meta-pill">👥 2–5</span><span class="meta-pill">⏱ 45 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-family">Famille</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/heat.html" data-name="Heat" data-tags="compet family" data-diff="1" data-players="1-6" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏎️</div></div><div class="card-body"><div class="card-name">Heat</div><div class="card-meta"><span class="meta-pill">👥 1–6</span><span class="meta-pill">⏱ 60 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-family">Famille</span></div></div></a>
+  <a class="card" href="rules/kana-gawa.html" data-name="Kanagawa" data-tags="compet family" data-diff="1" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🎨</div></div><div class="card-body"><div class="card-name">Kanagawa</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 40 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-family">Famille</span></div></div></a>
+  <a class="card" href="rules/aventuriers-rail.html" data-name="Les Aventuriers du Rail Europe" data-tags="compet family strategy" data-diff="1" data-players="2-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🚂</div></div><div class="card-body"><div class="card-name">Aventuriers du Rail</div><div class="card-meta"><span class="meta-pill">👥 2–5</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-family">Famille</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <!-- DEDUCTION -->
+  <a class="card" href="rules/cryptide.html" data-name="Cryptide" data-tags="compet deduct" data-diff="2" data-players="3-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">👁️</div></div><div class="card-body"><div class="card-name">Cryptide</div><div class="card-meta"><span class="meta-pill">👥 3–5</span><span class="meta-pill">⏱ 40 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-deduct">Déduction</span></div></div></a>
+  <a class="card" href="rules/shadows-camelot.html" data-name="Shadows over Camelot" data-tags="coop deduct" data-diff="2" data-players="3-7" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">⚔️</div></div><div class="card-body"><div class="card-name">Shadows over Camelot</div><div class="card-meta"><span class="meta-pill">👥 3–7</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-deduct">Rôle caché</span></div></div></a>
+  <!-- 2 JOUEURS -->
+  <a class="card" href="rules/quarto.html" data-name="Quarto" data-tags="compet strategy" data-diff="2" data-players="2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">⬜</div></div><div class="card-body"><div class="card-name">Quarto</div><div class="card-meta"><span class="meta-pill">👥 2</span><span class="meta-pill">⏱ 20 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Abstrait</span></div></div></a>
+  <a class="card" href="rules/7-wonders-duel.html" data-name="7 Wonders Duel" data-tags="compet strategy" data-diff="2" data-players="2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏛️</div></div><div class="card-body"><div class="card-name">7 Wonders Duel</div><div class="card-meta"><span class="meta-pill">👥 2</span><span class="meta-pill">⏱ 30 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/wonderful-kingdom.html" data-name="It's a Wonderful Kingdom" data-tags="compet strategy" data-diff="2" data-players="2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">👑</div></div><div class="card-body"><div class="card-name">Wonderful Kingdom</div><div class="card-meta"><span class="meta-pill">👥 1–2</span><span class="meta-pill">⏱ 40 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/echecs.html" data-name="Échecs" data-tags="compet strategy" data-diff="3" data-players="2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">♟️</div></div><div class="card-body"><div class="card-name">Échecs</div><div class="card-meta"><span class="meta-pill">👥 2</span><span class="meta-pill">⏱ ∞</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot on"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Abstrait</span></div></div></a>
+  <a class="card" href="rules/targui.html" data-name="Targui" data-tags="compet strategy" data-diff="2" data-players="2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏜️</div></div><div class="card-body"><div class="card-name">Targui</div><div class="card-meta"><span class="meta-pill">👥 2</span><span class="meta-pill">⏱ 40 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Abstrait</span></div></div></a>
+  <a class="card" href="rules/stratego-legends.html" data-name="Stratego Legends" data-tags="compet strategy deduct" data-diff="2" data-players="2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🛡️</div></div><div class="card-body"><div class="card-name">Stratego Legends</div><div class="card-meta"><span class="meta-pill">👥 2</span><span class="meta-pill">⏱ 50 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span><span class="ctag ctag-deduct">Info cachée</span></div></div></a>
+  <!-- STRATÉGIE -->
+  <a class="card" href="rules/nidavellir.html" data-name="Nidavellir" data-tags="compet strategy" data-diff="2" data-players="2-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🍺</div></div><div class="card-body"><div class="card-name">Nidavellir</div><div class="card-meta"><span class="meta-pill">👥 2–5</span><span class="meta-pill">⏱ 45 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/lords-scotland.html" data-name="Lords of Scotland" data-tags="compet party" data-diff="1" data-players="2-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div></div><div class="card-body"><div class="card-name">Lords of Scotland</div><div class="card-meta"><span class="meta-pill">👥 2–5</span><span class="meta-pill">⏱ 30 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-compet">Compétitif</span><span class="ctag ctag-party">Party</span></div></div></a>
+  <a class="card" href="rules/lords-xidit.html" data-name="Lords of Xidit" data-tags="compet strategy" data-diff="2" data-players="3-5" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🧙</div></div><div class="card-body"><div class="card-name">Lords of Xidit</div><div class="card-meta"><span class="meta-pill">👥 3–5</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/brian-boru.html" data-name="Brian Boru" data-tags="compet strategy" data-diff="2" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🍀</div></div><div class="card-body"><div class="card-name">Brian Boru</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/golem.html" data-name="Golem" data-tags="compet strategy" data-diff="2" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🗿</div></div><div class="card-body"><div class="card-name">Golem</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/brazil.html" data-name="Brazil Imperial" data-tags="compet strategy" data-diff="2" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🌿</div></div><div class="card-body"><div class="card-name">Brazil: Imperial</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 90 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/fondateurs-teotihuacan.html" data-name="Fondateurs de Teotihuacan" data-tags="compet strategy" data-diff="2" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏺</div></div><div class="card-body"><div class="card-name">Fondateurs de Teotihuacan</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 90 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/champ-honneur.html" data-name="Champ d'Honneur" data-tags="compet strategy" data-diff="2" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🪖</div></div><div class="card-body"><div class="card-name">Champ d'Honneur</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 45 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/angel-fury.html" data-name="Angel Fury" data-tags="team strategy" data-diff="2" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">😇</div></div><div class="card-body"><div class="card-name">Angel Fury</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 60 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-team">Équipes</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <!-- COOPÉRATIF -->
+  <a class="card" href="rules/aeons-end.html" data-name="Aeon's End" data-tags="coop strategy" data-diff="2" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">💥</div></div><div class="card-body"><div class="card-name">Aeon's End</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/one-deck-dungeon.html" data-name="One Deck Dungeon" data-tags="coop strategy" data-diff="2" data-players="1-2" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🎲</div></div><div class="card-body"><div class="card-name">One Deck Dungeon</div><div class="card-meta"><span class="meta-pill">👥 1–2</span><span class="meta-pill">⏱ 40 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/thorgal.html" data-name="Thorgal" data-tags="coop strategy" data-diff="2" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🪓</div></div><div class="card-body"><div class="card-name">Thorgal</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-strategy">Aventure</span></div></div></a>
+  <!-- EXPERT -->
+  <a class="card" href="rules/agricola.html" data-name="Agricola" data-tags="compet strategy" data-diff="3" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🌾</div></div><div class="card-body"><div class="card-name">Agricola</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 120 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot on"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/ark-nova.html" data-name="Ark Nova" data-tags="compet strategy" data-diff="3" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🦁</div></div><div class="card-body"><div class="card-name">Ark Nova</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 120 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot on"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/bonfire.html" data-name="Bonfire" data-tags="compet strategy" data-diff="3" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🔥</div></div><div class="card-body"><div class="card-name">Bonfire</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 80 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot on"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/hauts-fourneaux.html" data-name="Les Hauts Fourneaux" data-tags="compet strategy" data-diff="3" data-players="2-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🏭</div></div><div class="card-body"><div class="card-name">Les Hauts Fourneaux</div><div class="card-meta"><span class="meta-pill">👥 2–4</span><span class="meta-pill">⏱ 75 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot on"></div></div><div class="card-tags"><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
+  <a class="card" href="rules/gloomhaven.html" data-name="Gloomhaven" data-tags="coop strategy" data-diff="3" data-players="1-4" data-rules="true"><div class="card-cover-wrap"><div class="card-cover-placeholder">🗺️</div></div><div class="card-body"><div class="card-name">Gloomhaven</div><div class="card-meta"><span class="meta-pill">👥 1–4</span><span class="meta-pill">⏱ 90 min</span></div><div class="diff"><div class="diff-dot on"></div><div class="diff-dot on"></div><div class="diff-dot on"></div></div><div class="card-tags"><span class="ctag ctag-coop">Coopératif</span><span class="ctag ctag-strategy">Stratégie</span></div></div></a>
 </div>
-
 <script>
 let currentLang = 'fr';
 let activeFilters = { type: 'all', players: 'all', diff: 'all' };
-
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.textContent === lang.toUpperCase())
-  );
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    el.textContent = lang === 'fr' ? el.dataset.fr : el.dataset.en;
-  });
-  document.getElementById('search').placeholder =
-    lang === 'fr' ? 'Rechercher un jeu…' : 'Search a game…';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+  document.querySelectorAll('[data-fr]').forEach(el => { el.textContent = lang === 'fr' ? el.dataset.fr : el.dataset.en; });
+  document.getElementById('search').placeholder = lang === 'fr' ? 'Rechercher un jeu…' : 'Search a game…';
   updateCount();
 }
-
 function setFilter(btn, group) {
-  document.querySelectorAll(`[onclick="setFilter(this,'${group}')"]`)
-    .forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`[onclick="setFilter(this,'${group}')"]`).forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   activeFilters[group] = btn.dataset.filter;
   filterGames();
 }
-
 function filterGames() {
   const q = document.getElementById('search').value.toLowerCase();
   let visible = 0;
-
   document.querySelectorAll('.card').forEach(card => {
-    const name    = card.dataset.name.toLowerCase();
-    const tags    = (card.dataset.tags || '').split(' ');
-    const diff    = card.dataset.diff;
+    const name = card.dataset.name.toLowerCase();
+    const tags = (card.dataset.tags || '').split(' ');
+    const diff = card.dataset.diff;
     const players = card.dataset.players || '';
-
-    if (q && !name.includes(q))                                             { card.classList.add('hidden'); return; }
+    if (q && !name.includes(q)) { card.classList.add('hidden'); return; }
     if (activeFilters.type !== 'all' && !tags.includes(activeFilters.type)) { card.classList.add('hidden'); return; }
     if (activeFilters.players !== 'all') {
       const pf = activeFilters.players;
-      if (pf === '2'   && !players.includes('2'))          { card.classList.add('hidden'); return; }
+      if (pf === '2'   && !players.match(/\b2\b/))         { card.classList.add('hidden'); return; }
       if (pf === '3-4' && !players.match(/[34]/))          { card.classList.add('hidden'); return; }
       if (pf === '5+'  && !players.match(/[5-9]|\d{2,}/)) { card.classList.add('hidden'); return; }
     }
     if (activeFilters.diff !== 'all' && diff !== activeFilters.diff) { card.classList.add('hidden'); return; }
-
     card.classList.remove('hidden');
     visible++;
   });
-
   updateCount(visible);
-
   let empty = document.getElementById('empty-state');
   if (visible === 0) {
-    if (!empty) {
-      empty = document.createElement('div');
-      empty.id = 'empty-state';
-      empty.className = 'empty';
-      empty.innerHTML = `<span class="emoji">🎲</span><span>${currentLang === 'fr' ? 'Aucun jeu trouvé' : 'No games found'}</span>`;
-      document.getElementById('grid').appendChild(empty);
-    }
-  } else {
-    if (empty) empty.remove();
-  }
+    if (!empty) { empty = document.createElement('div'); empty.id = 'empty-state'; empty.className = 'empty'; empty.innerHTML = `<span class="emoji">🎲</span><span>${currentLang === 'fr' ? 'Aucun jeu trouvé' : 'No games found'}</span>`; document.getElementById('grid').appendChild(empty); }
+  } else { if (empty) empty.remove(); }
 }
-
 function updateCount(n) {
   const count = n !== undefined ? n : document.querySelectorAll('.card:not(.hidden)').length;
   document.getElementById('count').textContent = count;
   const lbl = document.getElementById('count-label');
-  lbl.textContent = currentLang === 'fr'
-    ? (count <= 1 ? 'jeu affiché' : 'jeux affichés')
-    : (count <= 1 ? 'game shown'  : 'games shown');
+  lbl.textContent = currentLang === 'fr' ? (count <= 1 ? 'jeu affiché' : 'jeux affichés') : (count <= 1 ? 'game shown' : 'games shown');
 }
-
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('click', e => {
-    if (card.dataset.rules !== 'true') e.preventDefault();
-  });
-});
-
+document.querySelectorAll('.card').forEach(card => { card.addEventListener('click', e => { if (card.dataset.rules !== 'true') e.preventDefault(); }); });
 updateCount();
 </script>
 </body>

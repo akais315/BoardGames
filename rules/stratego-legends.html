@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Stratego Legends — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Stratego Legends</h1>
+</header>
+<main>
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">2 uniquement</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">45–60 min</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Moyen</span></div>
+  </div>
+  <div class="type-badges">
+    <span class="type-badge competitive">⚔️ Compétitif</span>
+    <span class="type-badge strategy">🧠 Stratégie</span>
+    <span class="type-badge deduct">🔍 Information cachée</span>
+  </div>
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">Capturer le <span class="hl-red">Drapeau</span> adverse, ou éliminer toutes les pièces mobiles de l'adversaire.</div>
+  <div class="section-title">Mise en place</div>
+  <ul class="rules">
+    <li>Plateau 10×10 avec deux lacs infranchissables au centre</li>
+    <li>Chaque joueur place ses <span class="hl-grey">40 pièces</span> face cachée dans ses 4 rangées de départ — l'adversaire ne voit pas leur rang</li>
+    <li>Les pièces ont des rangs de 1 (Éclaireur) à 10 (Maréchal), plus des pièces spéciales</li>
+  </ul>
+  <div class="section-title">Déplacement et combat</div>
+  <ul class="rules">
+    <li>À votre tour, déplacez une pièce d'<span class="hl-green">1 case</span> (orthogonal). L'Éclaireur peut avancer de plusieurs cases en ligne droite</li>
+    <li>Si vous vous déplacez sur une pièce adverse → <span class="hl-grey">combat !</span> Les deux révèlent leur rang</li>
+    <li>La pièce de <span class="hl-green">rang supérieur</span> gagne. En cas d'égalité, les deux sont éliminées</li>
+  </ul>
+  <div class="section-title">Pièces spéciales</div>
+  <ul class="rules">
+    <li><span class="hl-red">Bombe (×6)</span> — Immobile. Élimine toute pièce qui l'attaque, <strong>sauf</strong> le Démineur</li>
+    <li><span class="hl-grey">Démineur (rang 3)</span> — Seule pièce pouvant neutraliser une Bombe</li>
+    <li><span class="hl-grey">Espion (rang 1)</span> — Bat le Maréchal (rang 10) s'il l'attaque en premier. Perd contre tout le reste</li>
+    <li><span class="hl-grey">Maréchal (rang 10)</span> — Pièce la plus forte</li>
+    <li><span class="hl-red">Drapeau</span> — Immobile, pas de combat. Le capturer = victoire</li>
+  </ul>
+  <div class="section-title">Stratego Legends — spécificités</div>
+  <ul class="rules">
+    <li>La version Legends ajoute des <span class="hl-purple">pouvoirs spéciaux</span> à certaines pièces (sorts, capacités uniques)</li>
+    <li>Des cartes événements peuvent modifier les règles temporairement</li>
+    <li>Les rangs de base restent les mêmes que Stratego classique</li>
+  </ul>
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Astuces</div>
+      <ul class="rules">
+        <li>Camouflez votre Drapeau derrière des Bombes et gardez un Démineur adverse en vie pour brouiller les pistes</li>
+        <li>Mémorisez les pièces adverses révélées — chaque combat donne une information précieuse</li>
+        <li>L'Espion est une pièce piège idéale : placé près du Maréchal adverse, il peut changer la partie</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>

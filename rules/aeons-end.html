@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Aeon's End — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Aeon's End</h1>
+</header>
+<main>
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">1 – 4</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">60–90 min</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Moyen</span></div>
+  </div>
+  <div class="type-badges">
+    <span class="type-badge coop">🤝 Coopératif</span>
+    <span class="type-badge strategy">🧠 Stratégie</span>
+  </div>
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">Réduire les <span class="hl-red">PV du Néant</span> (boss) à 0 avant que la brèche (vie de la ville) soit détruite ou que tous les mages soient vaincus.</div>
+  <div class="section-title">Le concept clé — pas de mélange !</div>
+  <div class="callout callout-warn">
+    <span class="callout-icon">⚠️</span>
+    <div class="callout-body">
+      <div class="callout-title">Règle unique</div>
+      <p>Contrairement à la plupart des deckbuilders, vous ne mélangez <strong>jamais</strong> votre défausse. Quand la pioche est vide, retournez la défausse telle quelle. Gérez l'ordre de votre deck !</p>
+    </div>
+  </div>
+  <div class="section-title">Structure d'un tour</div>
+  <ul class="rules">
+    <li>L'ordre des tours est déterminé par le <span class="hl-grey">deck d'ordre</span> mélangé en début de partie (joueurs + cartes Néant)</li>
+    <li>Quand une carte joueur sort : ce joueur joue son tour complet</li>
+    <li>Quand une carte Néant sort : le boss agit selon sa carte de comportement</li>
+  </ul>
+  <div class="section-title">Tour d'un mage</div>
+  <ul class="rules">
+    <li>Jouez des cartes de votre main pour gagner <span class="hl-green">éther</span> (monnaie) ou des effets</li>
+    <li>Ouvrez et chargez vos <span class="hl-grey">brèches</span> (emplacements de sorts) — chaque brèche a un coût d'ouverture</li>
+    <li>Lancez des sorts depuis vos brèches ouvertes (les brèches se referment ensuite)</li>
+    <li>Achetez des cartes depuis la réserve centrale avec votre éther</li>
+    <li>Piochez jusqu'à 5 cartes</li>
+  </ul>
+  <div class="section-title">Brèches</div>
+  <ul class="rules">
+    <li>Chaque mage a 4 brèches. Elles commencent fermées (face -)</li>
+    <li>Dépenser de l'éther les fait avancer vers l'ouverture (III → II → I → ouvert)</li>
+    <li>Un sort chargé dans une brèche ouverte peut être lancé ce tour ou les suivants</li>
+    <li>Certaines brèches ont des bonus spéciaux quand ouvertes</li>
+  </ul>
+  <div class="section-title">Le Néant</div>
+  <ul class="rules">
+    <li>Chaque boss a un deck de cartes comportement unique — attaques, invocations de sbires, effets spéciaux</li>
+    <li>Les sbires bloquent les attaques sur le boss et attaquent la brèche (ville)</li>
+    <li>Si la brèche tombe à 0 PV → défaite immédiate</li>
+  </ul>
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Astuces</div>
+      <ul class="rules">
+        <li>Coordonnez les achats : évitez que tout le monde achète les mêmes cartes</li>
+        <li>Gérez l'ordre de votre deck — placez les cartes utiles pour les prochains tours</li>
+        <li>Les sbires sont une menace prioritaire : ils font perdre la partie via la brèche</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>
