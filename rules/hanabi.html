@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Hanabi — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Hanabi</h1>
+</header>
+<main>
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Joueurs</span><span class="prop-value">2 – 5</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span><span class="prop-value">25 min</span></div>
+    <div class="prop-row"><span class="prop-label">Difficulté</span><span class="prop-value">Facile</span></div>
+  </div>
+  <div class="type-badges">
+    <span class="type-badge coop">🤝 Coopératif</span>
+    <span class="type-badge party">🎉 Party</span>
+  </div>
+
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">Construire ensemble le feu d'artifice parfait : poser les 5 couleurs en séquence <span class="hl-green">1–2–3–4–5</span> pour un score maximum de <span class="hl-green">25 points</span>. Plus le score est élevé, mieux c'est.</div>
+
+  <div class="section-title">La règle fondamentale</div>
+  <div class="callout callout-warn">
+    <span class="callout-icon">🙈</span>
+    <div class="callout-body">
+      <div class="callout-title">Vous ne voyez pas vos propres cartes</div>
+      <p>Tenez votre main face vers les autres joueurs — vous voyez les cartes de tout le monde <strong>sauf les vôtres</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Mise en place</div>
+  <ul class="rules">
+    <li>50 cartes (5 couleurs × valeurs 1-2-3-4-5), 8 <span class="hl-blue">jetons indice</span>, 3 <span class="hl-red">jetons foudre</span></li>
+    <li>Distribuez 4 cartes à chaque joueur (5 cartes à 2 joueurs) — face vers les autres</li>
+  </ul>
+
+  <div class="section-title">Tour de jeu — choisissez 1 action</div>
+  <ul class="rules">
+    <li><span class="hl-blue">Donner un indice</span> — Dépensez 1 jeton indice. Indiquez à un autre joueur toutes les cartes d'une même <strong>couleur</strong> ou d'un même <strong>chiffre</strong> dans sa main. Vous devez pointer <em>toutes</em> les cartes concernées (pas de mensonge partiel)</li>
+    <li><span class="hl-green">Poser une carte</span> — Posez une carte de votre main sur le plateau. Elle est valide si elle prolonge la séquence d'une couleur (ex : jouer le 2 rouge si le 1 rouge est déjà posé). Si invalide → défaussée + perdez 1 <span class="hl-red">jeton foudre</span></li>
+    <li><span class="hl-grey">Défausser une carte</span> — Défaussez une carte, récupérez 1 <span class="hl-blue">jeton indice</span>. Impossible si les 8 jetons sont disponibles</li>
+    <li>Après toute action, piochez 1 carte</li>
+  </ul>
+
+  <div class="section-title">Fin de partie</div>
+  <ul class="rules">
+    <li><span class="hl-red">Défaite immédiate</span> si les 3 jetons foudre sont perdus</li>
+    <li>Quand la pioche est épuisée, chaque joueur joue <span class="hl-green">1 dernier tour</span> puis on additionne le haut de chaque colonne</li>
+    <li>Score parfait = 25. Excellent ≥ 20. Bon ≥ 15.</li>
+  </ul>
+
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Astuces</div>
+      <ul class="rules">
+        <li>Un indice doit être <em>utile</em> — pointer 4 cartes "rouges" dont 3 non jouables n'aide pas vraiment</li>
+        <li>Si quelqu'un vous donne un indice sur une seule carte, c'est souvent qu'elle est jouable maintenant</li>
+        <li>Défaussez les cartes dont vous savez qu'elles sont inutiles pour récupérer des jetons indice</li>
+        <li>Ne gaspillez pas les 5 — il n'y en a qu'un par couleur dans le deck</li>
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>
