@@ -1,0 +1,184 @@
+/* ── assets/rules.css — individual game rules pages ── */
+
+/* ── HEADER ── */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 52px;
+}
+.back-btn {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  transition: color .2s;
+}
+.back-btn:hover { color: var(--text); }
+.back-btn svg { width: 16px; height: 16px; }
+
+header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: .08em;
+  color: var(--text);
+  flex: 1;
+}
+
+/* ── MAIN CONTENT ── */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+/* ── PROPERTIES CARD ── */
+.props {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+}
+.prop-row {
+  display: flex;
+  align-items: center;
+  padding: .65rem 1rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+.prop-row:last-child { border-bottom: none; }
+.prop-label {
+  color: var(--muted);
+  font-size: .82rem;
+  min-width: 90px;
+}
+.prop-value {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── TYPE BADGES ── */
+.type-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.75rem;
+}
+.type-badge {
+  padding: .3rem .75rem;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 500;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.type-badge.coop       { border-color: var(--green);  color: var(--green);  background: var(--green-bg); }
+.type-badge.competitive{ border-color: var(--red);    color: var(--red);    background: var(--red-bg); }
+.type-badge.team       { border-color: var(--blue);   color: var(--blue);   background: var(--blue-bg); }
+.type-badge.family     { border-color: var(--accent); color: var(--accent); background: rgba(245,166,35,.1); }
+.type-badge.strategy   { border-color: var(--purple); color: var(--purple); background: rgba(167,139,250,.1); }
+.type-badge.party      { border-color: var(--yellow); color: var(--yellow); background: rgba(251,191,36,.1); }
+
+/* ── SECTION TITLES ── */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: .1em;
+  color: var(--accent);
+  margin: 1.75rem 0 .75rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── HIGHLIGHTS ── */
+.hl-green { background: var(--green-bg); color: var(--green);  padding: .05em .35em; border-radius: 4px; font-weight: 500; }
+.hl-blue  { background: var(--blue-bg);  color: var(--blue);   padding: .05em .35em; border-radius: 4px; font-weight: 500; }
+.hl-red   { background: var(--red-bg);   color: var(--red);    padding: .05em .35em; border-radius: 4px; font-weight: 500; }
+.hl-grey  { background: var(--grey-bg);  color: var(--grey);   padding: .05em .35em; border-radius: 4px; font-weight: 500; }
+
+/* ── VICTORY CONDITION ── */
+.victory {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 8px;
+  padding: .85rem 1rem;
+  font-size: .92rem;
+}
+
+/* ── CALLOUTS ── */
+.callout {
+  border-radius: 8px;
+  padding: .85rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  gap: .75rem;
+}
+.callout-icon { font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
+.callout-body { flex: 1; }
+.callout-title { font-weight: 600; font-size: .85rem; margin-bottom: .25rem; }
+.callout-body p,
+.callout-body li { font-size: .88rem; line-height: 1.5; }
+
+.callout-warn {
+  background: var(--warn-bg);
+  border-left: 3px solid var(--warn-border);
+}
+.callout-warn .callout-title,
+.callout-warn .callout-icon { color: var(--warn-text); }
+
+.callout-tip {
+  background: var(--tip-bg);
+  border-left: 3px solid var(--tip-border);
+}
+.callout-tip .callout-title,
+.callout-tip .callout-icon { color: var(--tip-text); }
+
+/* ── RULE LISTS ── */
+ul.rules {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+ul.rules li {
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: .92rem;
+  line-height: 1.6;
+}
+ul.rules li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+/* Nested lists */
+ul.rules ul.rules {
+  margin-top: .5rem;
+  margin-left: .5rem;
+  border-left: 2px solid var(--border);
+  padding-left: .75rem;
+}

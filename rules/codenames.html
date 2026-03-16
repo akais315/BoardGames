@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<title>Codenames — Règles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/rules.css">
+<body>
+
+<header>
+  <a href="../index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Ludothèque
+  </a>
+  <h1>Codenames</h1>
+</header>
+
+<main>
+
+  <div class="props">
+    <div class="prop-row"><span class="prop-label">Genre</span>   <span class="prop-value">Mots</span></div>
+    <div class="prop-row"><span class="prop-label">Joueurs</span> <span class="prop-value">4 – 99</span></div>
+    <div class="prop-row"><span class="prop-label">Rivalité</span><span class="prop-value">Équipe</span></div>
+    <div class="prop-row"><span class="prop-label">Durée</span>   <span class="prop-value">~20 min</span></div>
+  </div>
+
+  <div class="type-badges">
+    <span class="type-badge competitive">⚔️ Compétitif</span>
+    <span class="type-badge team">🤝 Équipes</span>
+  </div>
+
+  <div class="section-title">Condition de victoire</div>
+  <div class="victory">
+    Faire deviner tous ses <span class="hl-green">mots</span> en premier,
+    sans faire révéler le <span class="hl-green">mot</span> noir.
+  </div>
+
+  <div class="section-title">Mise en place</div>
+  <ul class="rules">
+    <li>Répartition en deux équipes (<span class="hl-blue">bleu</span> et <span class="hl-red">rouge</span>)</li>
+    <li>Chaque équipe désigne un <span class="hl-grey">agent</span> qui fera deviner les <span class="hl-green">mots</span></li>
+    <li>Les deux <span class="hl-grey">agents</span> se mettent d'un côté de la table, les autres joueurs de l'autre</li>
+    <li>Déposer 25 <span class="hl-green">mots</span> en grille de 5×5 sur la table</li>
+    <li>Tirer une carte de répartition des <span class="hl-green">mots</span> et la placer devant les <span class="hl-grey">agents</span></li>
+  </ul>
+
+  <div class="callout callout-warn">
+    <span class="callout-icon">⚠️</span>
+    <div class="callout-body">
+      <div class="callout-title">Attention</div>
+      <p>Seuls les <span class="hl-grey">agents</span> peuvent voir la carte de répartition.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Règles principales</div>
+  <ul class="rules">
+    <li>L'équipe qui commence est celle dont la couleur borde la carte de répartition. Cette équipe devra faire deviner un <span class="hl-green">mot</span> de plus (9 au total)</li>
+    <li>Pour faire deviner ses <span class="hl-green">mots</span>, l'<span class="hl-grey">agent</span> donne un indice — <strong>un seul mot</strong> — et un nombre de <span class="hl-green">mots</span> correspondant à cet indice</li>
+    <li>L'équipe doit ensuite proposer les <span class="hl-green">mots</span> de la grille un par un :
+      <ul class="rules">
+        <li>Si le <span class="hl-green">mot</span> correspond à la couleur de l'<span class="hl-grey">agent</span> → tuile posée, l'équipe peut continuer (jusqu'au nombre indiqué + 1)</li>
+        <li>Si le <span class="hl-green">mot</span> est beige ou de la couleur adverse → tuile posée, fin du tour</li>
+        <li>Si le <span class="hl-green">mot</span> est le <strong>mot noir</strong> → fin de partie, l'équipe adverse gagne !</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="callout callout-warn">
+    <span class="callout-icon">⚠️</span>
+    <div class="callout-body">
+      <div class="callout-title">Règle stricte</div>
+      <p>L'<span class="hl-grey">agent</span> ne peut à <strong>aucun moment</strong> commenter son indice ou les <span class="hl-green">mots</span> proposés par son équipe.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Astuces</div>
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Conseils</div>
+      <ul class="rules">
+        <li>Analyser l'ensemble des 25 <span class="hl-green">mots</span> avant de donner un indice</li>
+        <li>Garder en tête les indices précédents si pas entièrement devinés</li>
+        <li>N'utiliser un indice pour un seul <span class="hl-green">mot</span> qu'en ultime recours — c'est une course !</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
